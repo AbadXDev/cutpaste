@@ -28,6 +28,14 @@ private let kKeyEscape: CGKeyCode = 53
 private let kFinderBundleID = "com.apple.finder"
 private let kWebsiteURL = "https://abadxdev.github.io/findercut/"
 private let kPrivacyURL = "https://abadxdev.github.io/findercut/privacy.html"
+// Display name: the Mac App Store build is "CutPaste" (Apple rejected
+// "FinderCut" under guideline 5.2.5: "Finder" is an Apple trademark).
+// The direct/GitHub build keeps the original name.
+#if APPSTORE
+private let kAppName = "CutPaste"
+#else
+private let kAppName = "FinderCut"
+#endif
 #if APPSTORE
 private let kTipProductIDs = ["dev.abadx.findercut.tip3",
                               "dev.abadx.findercut.tip4",
@@ -108,13 +116,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusItem.button {
             button.image = NSImage(systemSymbolName: "scissors",
-                                   accessibilityDescription: "FinderCut")
+                                   accessibilityDescription: kAppName)
             button.title = ""
-            button.toolTip = L("FinderCut — Cmd+X para cortar archivos en Finder", "FinderCut — Cmd+X to cut files in Finder")
+            button.toolTip = L("\(kAppName) — Cmd+X para cortar archivos", "\(kAppName) — Cmd+X to cut files")
         }
 
         let menu = NSMenu()
-        let header = NSMenuItem(title: "FinderCut — By AbadXDev", action: nil, keyEquivalent: "")
+        let header = NSMenuItem(title: "\(kAppName) — By AbadXDev", action: nil, keyEquivalent: "")
         header.isEnabled = false
         menu.addItem(header)
 
@@ -128,7 +136,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(.separator())
 
-        pauseItem = NSMenuItem(title: L("Pausar FinderCut", "Pause FinderCut"), action: #selector(togglePause), keyEquivalent: "")
+        pauseItem = NSMenuItem(title: L("Pausar \(kAppName)", "Pause \(kAppName)"), action: #selector(togglePause), keyEquivalent: "")
         pauseItem.target = self
         menu.addItem(pauseItem)
 
@@ -143,7 +151,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(.separator())
 
-        let supportItem = NSMenuItem(title: L("Apoyar FinderCut ❤️…", "Support FinderCut ❤️…"), action: #selector(openSupport), keyEquivalent: "")
+        let supportItem = NSMenuItem(title: L("Apoyar \(kAppName) ❤️…", "Support \(kAppName) ❤️…"), action: #selector(openSupport), keyEquivalent: "")
         supportItem.target = self
         menu.addItem(supportItem)
 
@@ -153,13 +161,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(privacyItem)
 #endif
 
-        let aboutItem = NSMenuItem(title: L("Acerca de FinderCut", "About FinderCut"), action: #selector(showAbout), keyEquivalent: "")
+        let aboutItem = NSMenuItem(title: L("Acerca de \(kAppName)", "About \(kAppName)"), action: #selector(showAbout), keyEquivalent: "")
         aboutItem.target = self
         menu.addItem(aboutItem)
 
         menu.addItem(.separator())
 
-        let quitItem = NSMenuItem(title: L("Salir de FinderCut", "Quit FinderCut"), action: #selector(quit), keyEquivalent: "q")
+        let quitItem = NSMenuItem(title: L("Salir de \(kAppName)", "Quit \(kAppName)"), action: #selector(quit), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
 
@@ -179,7 +187,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         pendingItem.title = cutPending
             ? L("Corte pendiente: \(pendingCount > 0 ? "\(pendingCount) elemento(s)" : "elementos") — Cmd+V en otra carpeta para mover", "Pending cut: \(pendingCount > 0 ? "\(pendingCount) item(s)" : "items") — Cmd+V in another folder to move")
             : L("Sin corte pendiente", "No pending cut")
-        pauseItem.title = paused ? L("Reanudar FinderCut", "Resume FinderCut") : L("Pausar FinderCut", "Pause FinderCut")
+        pauseItem.title = paused ? L("Reanudar \(kAppName)", "Resume \(kAppName)") : L("Pausar \(kAppName)", "Pause \(kAppName)")
         loginItem.state = (SMAppService.mainApp.status == .enabled) ? .on : .off
         if let button = statusItem.button {
             button.title = cutPending ? " •" : ""
@@ -208,7 +216,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 try SMAppService.mainApp.register()
             }
         } catch {
-            NSLog("FinderCut: login item toggle failed: \(error)")
+            NSLog("\(kAppName): login item toggle failed: \(error)")
         }
         updateMenu()
     }
@@ -234,11 +242,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func showAbout() {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
         let alert = NSAlert()
-        alert.messageText = "FinderCut \(version)"
+        alert.messageText = "\(kAppName) \(version)"
         alert.alertStyle = .informational
         NSApp.activate(ignoringOtherApps: true)
 #if APPSTORE
-        alert.informativeText = L("Corta y pega archivos en Finder con Cmd+X y Cmd+V.\n\nBy AbadXDev\nRequiere macOS 13 o posterior\n\nWeb: https://abadxdev.github.io/findercut/", "Cut and paste files in Finder with Cmd+X and Cmd+V.\n\nBy AbadXDev\nRequires macOS 13 or later\n\nWeb: https://abadxdev.github.io/findercut/")
+        alert.informativeText = L("Corta y pega archivos con Cmd+X y Cmd+V.\n\nBy AbadXDev\nRequiere macOS 13 o posterior\n\nWeb: https://abadxdev.github.io/findercut/", "Cut and paste files with Cmd+X and Cmd+V.\n\nBy AbadXDev\nRequires macOS 13 or later\n\nWeb: https://abadxdev.github.io/findercut/")
         alert.addButton(withTitle: L("Sitio web", "Website"))
         alert.addButton(withTitle: L("Cerrar", "Close"))
         if alert.runModal() == .alertFirstButtonReturn, let url = URL(string: kWebsiteURL) {
@@ -410,16 +418,16 @@ enum TipStore {
         let products = (try? await Product.products(for: kTipProductIDs)) ?? []
         let sorted = products.sorted { $0.price < $1.price }
         let alert = NSAlert()
-        alert.messageText = L("Apoyar FinderCut ❤️", "Support FinderCut ❤️")
+        alert.messageText = L("Apoyar \(kAppName) ❤️", "Support \(kAppName) ❤️")
         alert.alertStyle = .informational
         NSApp.activate(ignoringOtherApps: true)
         if sorted.isEmpty {
-            alert.informativeText = L("Las opciones de apoyo no están disponibles en este momento. FinderCut sigue siendo gratuito y completo.", "Support options aren't available right now. FinderCut remains free and fully functional.")
+            alert.informativeText = L("Las opciones de apoyo no están disponibles en este momento. \(kAppName) sigue siendo gratuito y completo.", "Support options aren't available right now. \(kAppName) remains free and fully functional.")
             alert.addButton(withTitle: L("Cerrar", "Close"))
             alert.runModal()
             return
         }
-        alert.informativeText = L("FinderCut es gratuito. Si te resulta útil, puedes apoyar su desarrollo con una propina única. No desbloquea nada: es solo una forma de dar las gracias.", "FinderCut is free. If you find it useful, you can support its development with a one-time tip. It unlocks nothing: it's just a way to say thanks.")
+        alert.informativeText = L("\(kAppName) es gratuito. Si te resulta útil, puedes apoyar su desarrollo con una propina única. No desbloquea nada: es solo una forma de dar las gracias.", "\(kAppName) is free. If you find it useful, you can support its development with a one-time tip. It unlocks nothing: it's just a way to say thanks.")
         for product in sorted {
             alert.addButton(withTitle: L("Apoyar con \(product.displayPrice)", "Support with \(product.displayPrice)"))
         }
@@ -440,7 +448,7 @@ enum TipStore {
                     await transaction.finish()
                     let thanks = NSAlert()
                     thanks.messageText = L("¡Muchas gracias! ❤️", "Thank you so much! ❤️")
-                    thanks.informativeText = L("Tu apoyo ayuda a que FinderCut siga siendo gratuito.", "Your support helps keep FinderCut free.")
+                    thanks.informativeText = L("Tu apoyo ayuda a que \(kAppName) siga siendo gratuito.", "Your support helps keep \(kAppName) free.")
                     thanks.alertStyle = .informational
                     thanks.addButton(withTitle: L("Cerrar", "Close"))
                     NSApp.activate(ignoringOtherApps: true)
@@ -452,7 +460,7 @@ enum TipStore {
                 break
             }
         } catch {
-            NSLog("FinderCut: tip purchase failed: \(error)")
+            NSLog("\(kAppName): tip purchase failed: \(error)")
         }
     }
 }

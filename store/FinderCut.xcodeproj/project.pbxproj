@@ -166,12 +166,12 @@
 				CODE_SIGN_ENTITLEMENTS = FinderCut.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3JT5LP9X6X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
-				INFOPLIST_KEY_CFBundleDisplayName = FinderCut;
+				INFOPLIST_KEY_CFBundleDisplayName = CutPaste;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSUIElement = YES;
@@ -183,7 +183,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.abadx.findercut;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CutPaste;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -195,12 +195,12 @@
 				CODE_SIGN_ENTITLEMENTS = FinderCut.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3JT5LP9X6X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
-				INFOPLIST_KEY_CFBundleDisplayName = FinderCut;
+				INFOPLIST_KEY_CFBundleDisplayName = CutPaste;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSUIElement = YES;
@@ -212,7 +212,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.abadx.findercut;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CutPaste;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
