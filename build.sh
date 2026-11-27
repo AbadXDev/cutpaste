@@ -1,10 +1,10 @@
 #!/bin/bash
-# FinderCut build script — builds FinderCut.app (ad-hoc signed, universal).
+# CutPaste build script — builds CutPaste.app (ad-hoc signed, universal).
 # Usage: ./build.sh
 set -e
 cd "$(dirname "$0")"
 
-APP="FinderCut.app"
+APP="CutPaste.app"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 
@@ -12,10 +12,10 @@ echo "==> Compiling (arm64 + x86_64)…"
 for ARCH in arm64 x86_64; do
   swiftc -O -target "$ARCH-apple-macosx13.0" \
     -framework Cocoa -framework ApplicationServices -framework ServiceManagement \
-    main.swift -o "FinderCut-$ARCH"
+    main.swift -o "CutPaste-$ARCH"
 done
-lipo -create "FinderCut-arm64" "FinderCut-x86_64" -output "$APP/Contents/MacOS/FinderCut"
-rm -f "FinderCut-arm64" "FinderCut-x86_64"
+lipo -create "CutPaste-arm64" "CutPaste-x86_64" -output "$APP/Contents/MacOS/CutPaste"
+rm -f "CutPaste-arm64" "CutPaste-x86_64"
 
 echo "==> Icon…"
 swift makeicon.swift icon-1024.png
@@ -38,21 +38,21 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>FinderCut</string>
+	<string>CutPaste</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>FinderCut</string>
+	<string>CutPaste</string>
 	<key>CFBundleIdentifier</key>
 	<string>dev.abadx.findercut</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.2.0</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleExecutable</key>
-	<string>FinderCut</string>
+	<string>CutPaste</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
 	<key>LSUIElement</key>

@@ -1,6 +1,6 @@
-// FinderCut — Corta y pega archivos en Finder con Cmd+X y Cmd+V
+// CutPaste — Corta y pega archivos en Finder con Cmd+X y Cmd+V
 // Free and open source (MIT). By AbadXDev.
-// https://github.com/AbadXDev/findercut
+// https://github.com/AbadXDev/cutpaste
 //
 // How it works:
 //  - A CGEvent tap watches key presses only while Finder is frontmost.
@@ -26,16 +26,12 @@ private let kKeyC: CGKeyCode = 8
 private let kKeyV: CGKeyCode = 9
 private let kKeyEscape: CGKeyCode = 53
 private let kFinderBundleID = "com.apple.finder"
-private let kWebsiteURL = "https://abadxdev.github.io/findercut/"
-private let kPrivacyURL = "https://abadxdev.github.io/findercut/privacy.html"
+private let kWebsiteURL = "https://abadxdev.github.io/cutpaste/"
+private let kPrivacyURL = "https://abadxdev.github.io/cutpaste/privacy.html"
 // Display name: the Mac App Store build is "CutPaste" (Apple rejected
-// "FinderCut" under guideline 5.2.5: "Finder" is an Apple trademark).
+// "CutPaste" under guideline 5.2.5: "Finder" is an Apple trademark).
 // The direct/GitHub build keeps the original name.
-#if APPSTORE
 private let kAppName = "CutPaste"
-#else
-private let kAppName = "FinderCut"
-#endif
 #if APPSTORE
 private let kTipProductIDs = ["dev.abadx.findercut.tip3",
                               "dev.abadx.findercut.tip4",
@@ -90,7 +86,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 #endif
 
         if !AXIsProcessTrusted() {
-            // Ask macOS to show the Accessibility prompt for FinderCut.
+            // Ask macOS to show the Accessibility prompt for CutPaste.
             let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary
             _ = AXIsProcessTrustedWithOptions(options)
         }
@@ -246,19 +242,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         alert.alertStyle = .informational
         NSApp.activate(ignoringOtherApps: true)
 #if APPSTORE
-        alert.informativeText = L("Corta y pega archivos con Cmd+X y Cmd+V.\n\nBy AbadXDev\nRequiere macOS 13 o posterior\n\nWeb: https://abadxdev.github.io/findercut/", "Cut and paste files with Cmd+X and Cmd+V.\n\nBy AbadXDev\nRequires macOS 13 or later\n\nWeb: https://abadxdev.github.io/findercut/")
+        alert.informativeText = L("Corta y pega archivos con Cmd+X y Cmd+V.\n\nBy AbadXDev\nRequiere macOS 13 o posterior\n\nWeb: https://abadxdev.github.io/cutpaste/", "Cut and paste files with Cmd+X and Cmd+V.\n\nBy AbadXDev\nRequires macOS 13 or later\n\nWeb: https://abadxdev.github.io/cutpaste/")
         alert.addButton(withTitle: L("Sitio web", "Website"))
         alert.addButton(withTitle: L("Cerrar", "Close"))
         if alert.runModal() == .alertFirstButtonReturn, let url = URL(string: kWebsiteURL) {
             NSWorkspace.shared.open(url)
         }
 #else
-        alert.informativeText = L("Corta y pega archivos en Finder con Cmd+X y Cmd+V.\n\nBy AbadXDev · Licencia MIT\nRequiere macOS 13 o posterior\n\nCódigo: https://github.com/AbadXDev/findercut\nWeb: https://abadxdev.github.io/findercut/", "Cut and paste files in Finder with Cmd+X and Cmd+V.\n\nBy AbadXDev · MIT License\nRequires macOS 13 or later\n\nCode: https://github.com/AbadXDev/findercut\nWeb: https://abadxdev.github.io/findercut/")
+        alert.informativeText = L("Corta y pega archivos en Finder con Cmd+X y Cmd+V.\n\nBy AbadXDev · Licencia MIT\nRequiere macOS 13 o posterior\n\nCódigo: https://github.com/AbadXDev/cutpaste\nWeb: https://abadxdev.github.io/cutpaste/", "Cut and paste files in Finder with Cmd+X and Cmd+V.\n\nBy AbadXDev · MIT License\nRequires macOS 13 or later\n\nCode: https://github.com/AbadXDev/cutpaste\nWeb: https://abadxdev.github.io/cutpaste/")
         alert.addButton(withTitle: L("Ver en GitHub", "View on GitHub"))
         alert.addButton(withTitle: L("Apoyar ❤️", "Support ❤️"))
         alert.addButton(withTitle: L("Cerrar", "Close"))
         let response = alert.runModal()
-        if response == .alertFirstButtonReturn, let url = URL(string: "https://github.com/AbadXDev/findercut") {
+        if response == .alertFirstButtonReturn, let url = URL(string: "https://github.com/AbadXDev/cutpaste") {
             NSWorkspace.shared.open(url)
         } else if response == .alertSecondButtonReturn {
             openSupport()
@@ -398,7 +394,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 // MARK: - Support tips (StoreKit) — Mac App Store build only
 //
 // Voluntary one-time tips handled entirely by Apple's in-app purchase.
-// FinderCut is fully free: a tip unlocks nothing and changes nothing.
+// CutPaste is fully free: a tip unlocks nothing and changes nothing.
 enum TipStore {
     private static var updatesTask: Task<Void, Never>?
 

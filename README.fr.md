@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/icon.png" width="160" alt="Icône de FinderCut">
+  <img src="assets/icon.png" width="160" alt="Icône de CutPaste">
 </p>
 
-<h1 align="center">FinderCut</h1>
+<h1 align="center">CutPaste</h1>
 
 <p align="center"><strong>By AbadXDev</strong></p>
 
@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="Plateforme">
   <img src="https://img.shields.io/badge/price-Free-brightgreen" alt="Prix">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="Licence">
-  <a href="https://github.com/AbadXDev/findercut/releases/latest"><img src="https://img.shields.io/github/v/release/AbadXDev/findercut" alt="Dernière version"></a>
+  <a href="https://github.com/AbadXDev/cutpaste/releases/latest"><img src="https://img.shields.io/github/v/release/AbadXDev/cutpaste" alt="Dernière version"></a>
 </p>
 
 <p align="center">🌐 **Bilingue :** l'interface suit automatiquement la langue de votre Mac — anglais ou espagnol. Vous pouvez aussi la choisir par app dans Réglages Système → Général → Langue et région.</p>
@@ -28,9 +28,9 @@
 
 | Système | Téléchargement | Remarques |
 | --- | --- | --- |
-| **macOS** 13+ (Apple silicon et Intel) | [Dernière version](https://github.com/AbadXDev/findercut/releases/latest) → `FinderCut-v1.0.0.zip` | Décompressez le fichier et déplacez `FinderCut.app` dans Applications. Signature ad hoc (non notariée) : si macOS bloque l'app la première fois, faites un clic droit sur l'app et choisissez **Ouvrir**. Accordez ensuite l'autorisation **Accessibilité** lorsque macOS la demande — FinderCut en a besoin pour détecter ⌘X dans le Finder. |
+| **macOS** 13+ (Apple silicon et Intel) | [Dernière version](https://github.com/AbadXDev/cutpaste/releases/latest) → `CutPaste-v1.0.0.zip` | Décompressez le fichier et déplacez `CutPaste.app` dans Applications. Signature ad hoc (non notariée) : si macOS bloque l'app la première fois, faites un clic droit sur l'app et choisissez **Ouvrir**. Accordez ensuite l'autorisation **Accessibilité** lorsque macOS la demande — CutPaste en a besoin pour détecter ⌘X dans le Finder. |
 
-Aucune compilation nécessaire — téléchargez l'app depuis la page [Releases](https://github.com/AbadXDev/findercut/releases) et utilisez-la.
+Aucune compilation nécessaire — téléchargez l'app depuis la page [Releases](https://github.com/AbadXDev/cutpaste/releases) et utilisez-la.
 
 ## Fonctionnement
 
@@ -38,8 +38,8 @@ Aucune compilation nécessaire — téléchargez l'app depuis la page [Releases]
   <img src="assets/how-it-works.png" width="860" alt="Sélectionnez un fichier et appuyez sur Commande X, ouvrez le dossier de destination, appuyez sur Commande V et le fichier s'y déplace">
 </p>
 
-1. **Sélectionnez des fichiers** dans le Finder et appuyez sur **`⌘X`** — FinderCut les copie et retient qu'une coupe est en attente. Les ciseaux dans votre barre de menus indiquent la coupe en attente.
-2. **Ouvrez le dossier de destination** et appuyez sur **`⌘V`** — FinderCut transforme ce collage en **Déplacer l'élément ici**, la fonction native du Finder (`⌥⌘V`), et les fichiers s'y déplacent.
+1. **Sélectionnez des fichiers** dans le Finder et appuyez sur **`⌘X`** — CutPaste les copie et retient qu'une coupe est en attente. Les ciseaux dans votre barre de menus indiquent la coupe en attente.
+2. **Ouvrez le dossier de destination** et appuyez sur **`⌘V`** — CutPaste transforme ce collage en **Déplacer l'élément ici**, la fonction native du Finder (`⌥⌘V`), et les fichiers s'y déplacent.
 3. **Vous avez changé d'avis ?** Rien n'a encore bougé — une coupe ne se produit qu'au moment du collage. Appuyez sur `Esc`, copiez autre chose avec `⌘C`, ou ne collez tout simplement pas.
 
 ## Raccourcis clavier
@@ -51,9 +51,9 @@ Aucune compilation nécessaire — téléchargez l'app depuis la page [Releases]
 | `⌘C` | Copier comme d'habitude (et annule toute coupe en attente) |
 | `Esc` | Annuler la coupe en attente |
 
-## FinderCut face à l'alternative payante
+## CutPaste face à l'alternative payante
 
-|  | **FinderCut** | Command X |
+|  | **CutPaste** | Command X |
 | --- | --- | --- |
 | Prix | **Gratuit** | $4 |
 | macOS minimum | **13** | 26 |
@@ -63,26 +63,26 @@ Aucune compilation nécessaire — téléchargez l'app depuis la page [Releases]
 ## Ce qu'il ne casse volontairement pas
 
 - **Renommer un fichier :** lorsque le Finder modifie un nom, `⌘X` / `⌘V` continuent à couper et coller du *texte*, exactement comme d'habitude.
-- **Les autres apps :** en dehors du Finder, FinderCut ne fait absolument rien.
+- **Les autres apps :** en dehors du Finder, CutPaste ne fait absolument rien.
 - **Vos fichiers :** rien n'est déplacé, renommé ou supprimé tant que vous ne collez pas.
 
 ## Configuration requise
 
 - macOS 13 ou version ultérieure, sur Apple silicon ou Intel.
-- L'autorisation **Accessibilité** (Réglages Système → Confidentialité et sécurité → Accessibilité). Tant que vous ne l'accordez pas, le menu des ciseaux affiche « autorisation Accessibilité manquante » ; une fois accordée, FinderCut la prend en compte sans redémarrage.
+- L'autorisation **Accessibilité** (Réglages Système → Confidentialité et sécurité → Accessibilité). Tant que vous ne l'accordez pas, le menu des ciseaux affiche « autorisation Accessibilité manquante » ; une fois accordée, CutPaste la prend en compte sans redémarrage.
 
 ## Confidentialité
 
-FinderCut ne collecte rien, ne contacte aucun serveur et n'a aucun outil d'analyse. Il surveille uniquement les frappes de touches lorsque le Finder est l'app au premier plan, et seulement `⌘X`, `⌘V`, `⌘C` et `Esc`.
+CutPaste ne collecte rien, ne contacte aucun serveur et n'a aucun outil d'analyse. Il surveille uniquement les frappes de touches lorsque le Finder est l'app au premier plan, et seulement `⌘X`, `⌘V`, `⌘C` et `Esc`.
 
 ## Compiler depuis les sources
 
 Nécessite les outils en ligne de commande Xcode sur macOS 13+ :
 
 ```sh
-git clone https://github.com/AbadXDev/findercut.git
-cd findercut
-./build.sh        # produces FinderCut.app (universal, ad-hoc signed)
+git clone https://github.com/AbadXDev/cutpaste.git
+cd cutpaste
+./build.sh        # produces CutPaste.app (universal, ad-hoc signed)
 ```
 
 ## Crédits et licence

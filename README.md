@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/icon.png" width="160" alt="FinderCut icon">
+  <img src="assets/icon.png" width="160" alt="CutPaste icon">
 </p>
 
-<h1 align="center">FinderCut</h1>
+<h1 align="center">CutPaste</h1>
 
 <p align="center"><strong>By AbadXDev</strong></p>
 
@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="Platform">
   <img src="https://img.shields.io/badge/price-Free-brightgreen" alt="Price">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
-  <a href="https://github.com/AbadXDev/findercut/releases/latest"><img src="https://img.shields.io/github/v/release/AbadXDev/findercut" alt="Latest release"></a>
+  <a href="https://github.com/AbadXDev/cutpaste/releases/latest"><img src="https://img.shields.io/github/v/release/AbadXDev/cutpaste" alt="Latest release"></a>
 </p>
 
 <p align="center">🌐 **Bilingual:** the interface automatically follows your Mac's language — English or Spanish. You can also choose it per app in System Settings → General → Language & Region.</p>
@@ -28,9 +28,9 @@
 
 | System | Download | Notes |
 | --- | --- | --- |
-| **macOS** 13+ (Apple silicon & Intel) | [Latest release](https://github.com/AbadXDev/findercut/releases/latest) → `FinderCut-v1.0.0.zip` | Unzip and move `FinderCut.app` to Applications. Ad-hoc signed (not notarized): if macOS blocks it the first time, right-click the app and choose **Open**. Then grant the **Accessibility** permission when macOS asks — FinderCut needs it to watch for ⌘X in Finder. |
+| **macOS** 13+ (Apple silicon & Intel) | [Latest release](https://github.com/AbadXDev/cutpaste/releases/latest) → `CutPaste-v1.0.0.zip` | Unzip and move `CutPaste.app` to Applications. Ad-hoc signed (not notarized): if macOS blocks it the first time, right-click the app and choose **Open**. Then grant the **Accessibility** permission when macOS asks — CutPaste needs it to watch for ⌘X in Finder. |
 
-No compiling needed — grab the app from the [Releases](https://github.com/AbadXDev/findercut/releases) page and use it.
+No compiling needed — grab the app from the [Releases](https://github.com/AbadXDev/cutpaste/releases) page and use it.
 
 ## How it works
 
@@ -38,8 +38,8 @@ No compiling needed — grab the app from the [Releases](https://github.com/Abad
   <img src="assets/how-it-works.png" width="860" alt="Select a file and press Command X, open the destination folder, press Command V and the file moves there">
 </p>
 
-1. **Select files** in Finder and press **`⌘X`** — FinderCut copies them and remembers that a cut is pending. The scissors in your menu bar shows the pending cut.
-2. **Open the destination folder** and press **`⌘V`** — FinderCut turns that paste into Finder's native **Move Item Here** (`⌥⌘V`), and the files move there.
+1. **Select files** in Finder and press **`⌘X`** — CutPaste copies them and remembers that a cut is pending. The scissors in your menu bar shows the pending cut.
+2. **Open the destination folder** and press **`⌘V`** — CutPaste turns that paste into Finder's native **Move Item Here** (`⌥⌘V`), and the files move there.
 3. **Changed your mind?** Nothing has moved yet — a cut only happens at paste time. Press `Esc`, copy something else with `⌘C`, or simply don't paste.
 
 ## Keyboard shortcuts
@@ -51,9 +51,9 @@ No compiling needed — grab the app from the [Releases](https://github.com/Abad
 | `⌘C` | Copy as usual (and cancels any pending cut) |
 | `Esc` | Cancel the pending cut |
 
-## FinderCut vs. the paid alternative
+## CutPaste vs. the paid alternative
 
-|  | **FinderCut** | Command X |
+|  | **CutPaste** | Command X |
 | --- | --- | --- |
 | Price | **Free** | $4 |
 | Minimum macOS | **13** | 26 |
@@ -63,26 +63,26 @@ No compiling needed — grab the app from the [Releases](https://github.com/Abad
 ## What it deliberately does not break
 
 - **Renaming a file:** while Finder is editing a name, `⌘X` / `⌘V` still cut and paste *text*, exactly as usual.
-- **Other apps:** outside Finder, FinderCut does nothing at all.
+- **Other apps:** outside Finder, CutPaste does nothing at all.
 - **Your files:** nothing is moved, renamed or deleted until you paste.
 
 ## Requirements
 
 - macOS 13 or later, on Apple silicon or Intel.
-- The **Accessibility** permission (System Settings → Privacy & Security → Accessibility). Until you grant it, the scissors menu shows “missing Accessibility permission”; grant it and FinderCut picks it up with no relaunch.
+- The **Accessibility** permission (System Settings → Privacy & Security → Accessibility). Until you grant it, the scissors menu shows “missing Accessibility permission”; grant it and CutPaste picks it up with no relaunch.
 
 ## Privacy
 
-FinderCut collects nothing, phones nowhere, and has no analytics. It only watches key presses while Finder is the frontmost app, and only `⌘X`, `⌘V`, `⌘C` and `Esc`.
+CutPaste collects nothing, phones nowhere, and has no analytics. It only watches key presses while Finder is the frontmost app, and only `⌘X`, `⌘V`, `⌘C` and `Esc`.
 
 ## Build from source
 
 Requires Xcode Command Line Tools on macOS 13+:
 
 ```sh
-git clone https://github.com/AbadXDev/findercut.git
-cd findercut
-./build.sh        # produces FinderCut.app (universal, ad-hoc signed)
+git clone https://github.com/AbadXDev/cutpaste.git
+cd cutpaste
+./build.sh        # produces CutPaste.app (universal, ad-hoc signed)
 ```
 
 ## Credits & license

@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/icon.png" width="160" alt="FinderCut-Symbol">
+  <img src="assets/icon.png" width="160" alt="CutPaste-Symbol">
 </p>
 
-<h1 align="center">FinderCut</h1>
+<h1 align="center">CutPaste</h1>
 
 <p align="center"><strong>By AbadXDev</strong></p>
 
@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="Plattform">
   <img src="https://img.shields.io/badge/price-Free-brightgreen" alt="Preis">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="Lizenz">
-  <a href="https://github.com/AbadXDev/findercut/releases/latest"><img src="https://img.shields.io/github/v/release/AbadXDev/findercut" alt="Neueste Version"></a>
+  <a href="https://github.com/AbadXDev/cutpaste/releases/latest"><img src="https://img.shields.io/github/v/release/AbadXDev/cutpaste" alt="Neueste Version"></a>
 </p>
 
 <p align="center">🌐 **Zweisprachig:** Die Oberfläche folgt automatisch der Sprache Ihres Mac — Englisch oder Spanisch. Sie können sie auch pro App in Systemeinstellungen → Allgemein → Sprache & Region wählen.</p>
@@ -28,9 +28,9 @@
 
 | System | Download | Hinweise |
 | --- | --- | --- |
-| **macOS** 13+ (Apple silicon und Intel) | [Neueste Version](https://github.com/AbadXDev/findercut/releases/latest) → `FinderCut-v1.0.0.zip` | Entpacken und `FinderCut.app` in Programme bewegen. Ad-hoc signiert (nicht notarisiert): Wenn macOS die App beim ersten Mal blockiert, klicken Sie mit der rechten Maustaste auf die App und wählen Sie **Öffnen**. Erteilen Sie dann die Berechtigung **Bedienungshilfen**, wenn macOS danach fragt — FinderCut braucht sie, um ⌘X im Finder zu erkennen. |
+| **macOS** 13+ (Apple silicon und Intel) | [Neueste Version](https://github.com/AbadXDev/cutpaste/releases/latest) → `CutPaste-v1.0.0.zip` | Entpacken und `CutPaste.app` in Programme bewegen. Ad-hoc signiert (nicht notarisiert): Wenn macOS die App beim ersten Mal blockiert, klicken Sie mit der rechten Maustaste auf die App und wählen Sie **Öffnen**. Erteilen Sie dann die Berechtigung **Bedienungshilfen**, wenn macOS danach fragt — CutPaste braucht sie, um ⌘X im Finder zu erkennen. |
 
-Kein Kompilieren nötig — laden Sie die App von der [Releases](https://github.com/AbadXDev/findercut/releases)-Seite und nutzen Sie sie.
+Kein Kompilieren nötig — laden Sie die App von der [Releases](https://github.com/AbadXDev/cutpaste/releases)-Seite und nutzen Sie sie.
 
 ## So funktioniert es
 
@@ -38,8 +38,8 @@ Kein Kompilieren nötig — laden Sie die App von der [Releases](https://github.
   <img src="assets/how-it-works.png" width="860" alt="Datei auswählen und Befehl X drücken, Zielordner öffnen, Befehl V drücken, und die Datei wird dorthin bewegt">
 </p>
 
-1. **Dateien auswählen** im Finder und **`⌘X`** drücken — FinderCut kopiert sie und merkt sich, dass ein Ausschneiden aussteht. Die Schere in Ihrer Menüleiste zeigt das ausstehende Ausschneiden an.
-2. **Zielordner öffnen** und **`⌘V`** drücken — FinderCut verwandelt dieses Einfügen in das Finder-eigene **Objekt hierher bewegen** (`⌥⌘V`), und die Dateien werden dorthin bewegt.
+1. **Dateien auswählen** im Finder und **`⌘X`** drücken — CutPaste kopiert sie und merkt sich, dass ein Ausschneiden aussteht. Die Schere in Ihrer Menüleiste zeigt das ausstehende Ausschneiden an.
+2. **Zielordner öffnen** und **`⌘V`** drücken — CutPaste verwandelt dieses Einfügen in das Finder-eigene **Objekt hierher bewegen** (`⌥⌘V`), und die Dateien werden dorthin bewegt.
 3. **Anders überlegt?** Noch wurde nichts bewegt — ein Ausschneiden geschieht erst beim Einfügen. Drücken Sie `Esc`, kopieren Sie etwas anderes mit `⌘C`, oder fügen Sie einfach nicht ein.
 
 ## Tastaturkurzbefehle
@@ -51,9 +51,9 @@ Kein Kompilieren nötig — laden Sie die App von der [Releases](https://github.
 | `⌘C` | Kopieren wie gewohnt (und bricht jedes ausstehende Ausschneiden ab) |
 | `Esc` | Das ausstehende Ausschneiden abbrechen |
 
-## FinderCut im Vergleich zur kostenpflichtigen Alternative
+## CutPaste im Vergleich zur kostenpflichtigen Alternative
 
-|  | **FinderCut** | Command X |
+|  | **CutPaste** | Command X |
 | --- | --- | --- |
 | Preis | **Kostenlos** | $4 |
 | Mindest-macOS | **13** | 26 |
@@ -63,26 +63,26 @@ Kein Kompilieren nötig — laden Sie die App von der [Releases](https://github.
 ## Was es absichtlich nicht kaputt macht
 
 - **Eine Datei umbenennen:** Während der Finder einen Namen bearbeitet, schneiden und fügen `⌘X` / `⌘V` weiterhin *Text* aus und ein, genau wie gewohnt.
-- **Andere Apps:** Außerhalb des Finders tut FinderCut überhaupt nichts.
+- **Andere Apps:** Außerhalb des Finders tut CutPaste überhaupt nichts.
 - **Ihre Dateien:** Nichts wird bewegt, umbenannt oder gelöscht, bis Sie einfügen.
 
 ## Voraussetzungen
 
 - macOS 13 oder neuer, auf Apple silicon oder Intel.
-- Die Berechtigung **Bedienungshilfen** (Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen). Solange Sie sie nicht erteilen, zeigt das Scherenmenü „Berechtigung Bedienungshilfen fehlt“; nach dem Erteilen erkennt FinderCut sie ohne Neustart.
+- Die Berechtigung **Bedienungshilfen** (Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen). Solange Sie sie nicht erteilen, zeigt das Scherenmenü „Berechtigung Bedienungshilfen fehlt“; nach dem Erteilen erkennt CutPaste sie ohne Neustart.
 
 ## Datenschutz
 
-FinderCut sammelt nichts, kontaktiert keine Server und hat keine Analysefunktionen. Es beobachtet nur Tastendrücke, während der Finder die vorderste App ist, und nur `⌘X`, `⌘V`, `⌘C` und `Esc`.
+CutPaste sammelt nichts, kontaktiert keine Server und hat keine Analysefunktionen. Es beobachtet nur Tastendrücke, während der Finder die vorderste App ist, und nur `⌘X`, `⌘V`, `⌘C` und `Esc`.
 
 ## Aus den Quellen bauen
 
 Erfordert die Xcode-Kommandozeilen-Tools auf macOS 13+:
 
 ```sh
-git clone https://github.com/AbadXDev/findercut.git
-cd findercut
-./build.sh        # produces FinderCut.app (universal, ad-hoc signed)
+git clone https://github.com/AbadXDev/cutpaste.git
+cd cutpaste
+./build.sh        # produces CutPaste.app (universal, ad-hoc signed)
 ```
 
 ## Credits und Lizenz
